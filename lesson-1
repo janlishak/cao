@@ -1,0 +1,20 @@
+-- Mon 31 Aug Lesson 1 --
+
+Boolean Operations:
+
+AND, OR, NOT, NAND, NOR
+
+- XOR - 
+A B =
+0 0 0
+0 1 1
+1 0 1
+1 1 0
+
+-   -  
+A+B+B+A
+
+Boolean algebra
++Check Commutative laws, Association laws, Distribution and De Morgan Laws
+
+  
