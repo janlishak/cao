@@ -1,0 +1,44 @@
+;
+; AssemblerApplication5.asm
+;
+; Created: 1/17/2021 10:37:15 AM
+; Author : jan
+;
+
+;init led
+ldi r21, 0b01000000; high (bit 7 is high where the led is located)
+ldi r22, 0b00000000; low
+
+out ddrb, r21
+
+forever:
+	call delay
+	out portb, r21
+	call delay
+	out portb, r22
+	jmp forever
+
+;1s delay = 800 000
+delay:
+	ldi r18, 80
+	loop3:
+		;200 000c loop
+		ldi r17, 200
+		loop2:
+			;1000c loop
+			ldi r16, 199
+			loop1:
+				nop
+				nop
+				dec r16
+				brne loop1
+			;----------
+			nop
+			nop
+			dec r17
+			brne loop2
+		;----------
+		dec r18
+		brne loop3
+	ret
+	
